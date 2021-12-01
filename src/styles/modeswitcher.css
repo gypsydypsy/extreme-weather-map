@@ -1,0 +1,86 @@
+.switch {
+    position: relative;
+    width: 25px;
+    height: 80px;
+}
+  
+.switch svg {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    font-size: 0.8rem;
+    color: rgb(146, 146, 146);
+}
+
+.switch svg:first-of-type{
+    top : 0;
+}
+
+.switch svg:last-of-type{
+    bottom : 0;
+}
+
+.switch input {
+    width: 25px;
+    height: 60px;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.switch .slider {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 40px;
+    width: 25px;
+    border-radius: 35px;
+    background-color: #ccc;
+    transition: .4s;
+    z-index: -1;
+}
+
+.switch .slider:before {
+    position: absolute;
+    left: 0;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: calc(50% - 9px);
+    bottom: 2px;
+    border-radius: 50%;
+    background-color: white;
+    transition: 0.4s;
+}
+
+.switch input:checked + .slider {
+    background-color: #2196F3;
+}
+
+.switch input:checked + .slider:before {
+    transform: translateY(-18px);
+}
+
+.switch input:checked ~ svg {
+    color: #2196F3;
+}
+
+.switch input:checked ~ svg:first-of-type {
+    opacity: 1;
+}
+
+.switch input:checked ~ svg:last-of-type {
+    opacity: 0.3;
+}
+
+.switch input ~ svg:first-of-type {
+    opacity: 0.3;
+}
+
+@media screen and (max-width: 576px){
+    .switch{
+        display: none;
+    }
+}
