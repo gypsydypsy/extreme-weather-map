@@ -10,12 +10,13 @@
   --danger: #DC3545;
   --grey : #202124;
   --darkgrey: #171717;
+  --fullHeight: 100vh;
 }
 
 body {
   margin: 0;
   padding: 0;
-  height: 100vh;
+  height: calc(var(--fullHeight, 1vh) * 100);
   width: 100vw;
   overflow: hidden;
 }
@@ -74,7 +75,7 @@ a:hover {
 }
 
 .container {
-  height: 100vh;
+  height: calc(var(--fullHeight, 1vh) * 100);
   width: 100vw;
   display: flex;
 }
@@ -541,7 +542,7 @@ a:hover {
   }
 
   .map {
-    height: calc(100vh - 50px);
+    height: calc(var(--fullHeight, 1vh) * 100 - 50px);
     width: 100%;
     flex-shrink: 0;
   }
